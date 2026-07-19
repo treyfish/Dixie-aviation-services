@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross City Airport (KCTY) — Dixie Aviation Services · Cross City, Florida</title>
+<meta name="description" content="Cross City Airport (KCTY / CTY), Dixie County, Florida. Live AWOS weather, runway and frequency data, 100LL &amp; Jet-A fuel, Dixie Aviation Services FBO, and the airport's history from WWII Army Airfield to Cold War radar station.">
+<link rel="preconnect" href="https://api.weather.gov">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛩️</text></svg>">
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-brand" href="#top">
+      <span class="nav-brand-id">KCTY</span>
+      <span class="nav-brand-name">Cross City Airport</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="#weather">Weather</a></li>
+      <li><a href="#pilots">Pilot Info</a></li>
+      <li><a href="#fbo">FBO &amp; Fuel</a></li>
+      <li><a href="#history">History</a></li>
+      <li><a href="#events">Fly-In</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">Dixie County, Florida · Gateway to the Hidden Coast</p>
+    <h1>Cross City Airport</h1>
+    <p class="hero-ids">ICAO <strong>KCTY</strong> · FAA <strong>CTY</strong> · Elev 42 ft · CTAF/UNICOM <strong>122.8</strong> · AWOS-3PT <strong>120.775</strong></p>
+    <p class="hero-tag">Two 5,000-foot runways, 100LL &amp; Jet-A, a courtesy car into town —
+    and eight decades of history, from WWII fighter training to a Cold War radar that still turns today.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#weather">Live Weather</a>
+      <a class="btn btn-ghost" href="#pilots">Pilot Info</a>
+      <a class="btn btn-ghost" href="#history">KCTY Through Time</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">▼</div>
+</section>
+
+<main>
+
+<!-- ============ LIVE WEATHER ============ -->
+<section class="section" id="weather">
+  <div class="container">
+    <h2><span class="section-num">01</span> Live Weather</h2>
+    <p class="section-lede">Current conditions at KCTY from the on-field AWOS-3PT, via the National Weather Service.
+    Pilots: always confirm with the AWOS broadcast on <strong>120.775</strong> or by phone at <strong>(352)&nbsp;498-0221</strong>.</p>
+
+    <div class="wx-card" id="wx-card" aria-live="polite">
+      <div class="wx-status" id="wx-status">Fetching latest observation…</div>
+      <div class="wx-grid" id="wx-grid" hidden>
+        <div class="wx-item"><span class="wx-label">Wind</span><span class="wx-value" id="wx-wind">—</span></div>
+        <div class="wx-item"><span class="wx-label">Visibility</span><span class="wx-value" id="wx-vis">—</span></div>
+        <div class="wx-item"><span class="wx-label">Sky</span><span class="wx-value" id="wx-sky">—</span></div>
+        <div class="wx-item"><span class="wx-label">Temp / Dewpoint</span><span class="wx-value" id="wx-temp">—</span></div>
+        <div class="wx-item"><span class="wx-label">Altimeter</span><span class="wx-value" id="wx-alt">—</span></div>
+        <div class="wx-item"><span class="wx-label">Density Alt.</span><span class="wx-value" id="wx-da">—</span></div>
+      </div>
+      <pre class="wx-metar" id="wx-metar" hidden></pre>
+      <div class="wx-footer">
+        <span id="wx-updated"></span>
+        <span class="wx-links">
+          <a href="https://forecast.weather.gov/data/obhistory/KCTY.html" target="_blank" rel="noopener">Obs history</a> ·
+          <a href="https://aviationweather.gov/data/metar/?id=KCTY" target="_blank" rel="noopener">METAR/TAF</a> ·
+          <a href="https://www.1800wxbrief.com/" target="_blank" rel="noopener">File a briefing</a>
+        </span>
+      </div>
+    </div>
+
+    <p class="fineprint">Weather data is advisory. It may lag the live AWOS broadcast — the frequency and phone line above are the authoritative sources for flight decisions.</p>
+  </div>
+</section>
+
+<!-- ============ PILOT INFO ============ -->
+<section class="section section-alt" id="pilots">
+  <div class="container">
+    <h2><span class="section-num">02</span> Pilot Information</h2>
+    <p class="section-lede">Everything you need for the pattern at a glance. Non-towered field — announce on CTAF 122.8.</p>
+
+    <div class="data-columns">
+      <div class="data-block">
+        <h3>Airport Data</h3>
+        <table class="data-table">
+          <tr><th>Identifiers</th><td>ICAO KCTY · FAA CTY</td></tr>
+          <tr><th>Location</th><td>1 NM E of Cross City, Dixie County, FL</td></tr>
+          <tr><th>Coordinates</th><td>29°38.13′N / 83°06.29′W<br>(29.6355, -83.1048)</td></tr>
+          <tr><th>Elevation</th><td>42.1 ft MSL</td></tr>
+          <tr><th>Ownership</th><td>Dixie County — public use, GA</td></tr>
+          <tr><th>Attended</th><td>0800–1700 local</td></tr>
+          <tr><th>Pattern</th><td>Non-towered — see A/FD for current data</td></tr>
+        </table>
+      </div>
+
+      <div class="data-block">
+        <h3>Frequencies</h3>
+        <table class="data-table">
+          <tr><th>CTAF / UNICOM</th><td class="freq">122.8</td></tr>
+          <tr><th>AWOS-3PT</th><td class="freq">120.775 <span class="freq-note">· (352) 498-0221</span></td></tr>
+          <tr><th>Jacksonville Center</th><td class="freq">127.8 / 352.0</td></tr>
+        </table>
+        <h3>Approaches</h3>
+        <table class="data-table">
+          <tr><th>RNAV (GPS)</th><td>Rwy 31 · RNAV alternates A/B</td></tr>
+          <tr><th>ILS</th><td>None</td></tr>
+          <tr><th>Lighting</th><td>PAPI on all four runway ends (3.00°)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <h3 class="rw-heading">Runways</h3>
+    <div class="runway-cards">
+      <div class="runway-card">
+        <div class="runway-id">4 / 22</div>
+        <div class="runway-dims">5,005 × 75 ft</div>
+        <div class="runway-detail">Asphalt — excellent condition · PAPI both ends</div>
+      </div>
+      <div class="runway-card">
+        <div class="runway-id">13 / 31</div>
+        <div class="runway-dims">5,001 × 100 ft</div>
+        <div class="runway-detail">Asphalt/concrete — fair · PAPI both ends · reconstructed 2015 · <em>Rwy 31 markings faded — use caution</em></div>
+      </div>
+    </div>
+    <p class="fineprint">Two crossing 5,000-ft runways — a legacy of the WWII triangle-field layout (see the <a href="#history">history tour</a>).
+    Verify all data with current FAA publications and NOTAMs:
+    <a href="https://www.notams.faa.gov/dinsQueryWeb/queryRetrievalMapAction.do?reportType=Raw&retrieveLocId=KCTY&actionType=notamRetrievalByICAOs" target="_blank" rel="noopener">check NOTAMs for KCTY</a> ·
+    <a href="https://skyvector.com/airport/CTY/Cross-City-Airport" target="_blank" rel="noopener">SkyVector</a> ·
+    <a href="http://www.airnav.com/airport/KCTY" target="_blank" rel="noopener">AirNav</a>.</p>
+  </div>
+</section>
+
+<!-- ============ FBO & FUEL ============ -->
+<section class="section" id="fbo">
+  <div class="container">
+    <h2><span class="section-num">03</span> Dixie Aviation Services — FBO &amp; Fuel</h2>
+    <p class="section-lede">Full-service FBO on the field. Land, fuel up, grab the courtesy car, and go find lunch on the Hidden Coast.</p>
+
+    <div class="fbo-grid">
+      <div class="fbo-card fbo-card-fuel">
+        <h3>Fuel</h3>
+        <div class="fuel-types">
+          <span class="fuel-badge fuel-100ll">100LL</span>
+          <span class="fuel-badge fuel-jeta">Jet-A</span>
+        </div>
+        <p>Full-serve and self-serve available. Call ahead for current prices:</p>
+        <p class="fbo-phone"><a href="tel:+13524986656">(352) 498-6656</a></p>
+        <p class="fineprint">Current prices are also listed on <a href="http://www.airnav.com/airport/KCTY" target="_blank" rel="noopener">AirNav</a>.</p>
+      </div>
+      <div class="fbo-card">
+        <h3>Services</h3>
+        <ul class="checklist">
+          <li>Aircraft parking (ramp and tiedown)</li>
+          <li>Hangars and hangar leasing</li>
+          <li>Aircraft maintenance</li>
+          <li>GPU / power carts</li>
+          <li>Passenger terminal &amp; facilities</li>
+          <li>Attended 0800–1700 local</li>
+        </ul>
+      </div>
+      <div class="fbo-card fbo-card-car">
+        <h3>Courtesy Transportation</h3>
+        <p><strong>Complimentary ground transportation</strong> into Cross City and out to the coastal communities — Suwannee, Horseshoe Beach, and beyond.</p>
+        <p>Fly in for scallop season, a waterfront dinner, or the Nature Coast Trail — we'll get you there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTORY SCROLL TOUR ============ -->
+<section class="tour" id="history">
+  <div class="tour-intro container">
+    <h2><span class="section-num">04</span> KCTY Through Time</h2>
+    <p class="section-lede">Few small-town airports have lived four lives. Cross City has been a lumber-country
+    landing field, a WWII fighter and commando training base, a node in America's first computerized
+    air-defense network — and the radar never stopped turning. Scroll through eight decades.</p>
+  </div>
+
+  <div class="tour-track">
+
+    <article class="era" data-era="1940">
+      <div class="era-inner">
+        <div class="era-year">1940</div>
+        <h3>A small-town airport is born</h3>
+        <p>Cross City Airport opens as a public airfield in <strong>April 1940</strong>, carved out of
+        Dixie County timber country. Cross City is a lumber boomtown — the Putnam Lumber Company's
+        1928 Putnam Lodge still stands just down the road. Aviation is young, the field is quiet,
+        and nobody imagines what's coming in two years.</p>
+      </div>
+    </article>
+
+    <article class="era era-war" data-era="1942">
+      <div class="era-inner">
+        <div class="era-year">1942</div>
+        <h3>Cross City Army Airfield</h3>
+        <p>In <strong>August 1942</strong> the U.S. Army Air Forces requisitions the field as
+        <strong>Cross City Army Airfield</strong>, a sub-base of Orlando Army Air Base under the
+        Army Air Forces School of Applied Tactics. Activated <strong>October 27, 1942</strong> under
+        the 50th Fighter Group, the sleepy strip becomes a triangle of concrete runways —
+        the same crossing 5,000-footers pilots use today.</p>
+        <p>From October 1942 to June 1943 the <strong>305th Fighter Squadron</strong> trains here
+        in the <strong>Bell P-39 Airacobra</strong>.</p>
+      </div>
+    </article>
+
+    <article class="era era-war" data-era="1943">
+      <div class="era-inner">
+        <div class="era-year">1943</div>
+        <h3>Thunderbolts over the Gulf</h3>
+        <p>From June 1943 to February 1944 the <strong>81st Fighter Squadron</strong> flies the
+        <strong>Republic P-47 Thunderbolt</strong> out of Cross City — seven tons of fighter
+        thundering off runways where Cessnas idle today. Cross City P-47s also operated from
+        Bushnell Army Airfield during gunnery training.</p>
+      </div>
+    </article>
+
+    <article class="era era-war" data-era="1944">
+      <div class="era-inner">
+        <div class="era-year">1944</div>
+        <h3>The Air Commandos' little birds</h3>
+        <p>In mid-1944 the mission changes completely: Cross City begins training
+        <strong>Air Commando liaison squadrons</strong> on the <strong>Piper L-4 Grasshopper</strong>
+        and <strong>Stinson L-5 Sentinel</strong> — tiny unarmed spotter planes whose pilots would
+        fly supply, evacuation, and rescue missions behind Japanese lines in Burma.
+        One of the least-known and most remarkable chapters in the field's story.</p>
+      </div>
+    </article>
+
+    <article class="era" data-era="1945">
+      <div class="era-inner">
+        <div class="era-year">1945</div>
+        <h3>Lights out</h3>
+        <p>With the war ending, Third Air Force orders the field closed. Cross City Army Airfield
+        goes inactive on <strong>February 1, 1945</strong>, is declared surplus in 1946, and returns
+        to civil control as Cross City Airport. The military chapter looks finished.
+        It isn't.</p>
+      </div>
+    </article>
+
+    <article class="era era-radar" data-era="1958">
+      <div class="era-inner">
+        <div class="era-year">1958</div>
+        <h3>The radar dome rises</h3>
+        <p>On <strong>July 1, 1958</strong> the <strong>691st Aircraft Control &amp; Warning Squadron</strong>
+        moves from Dobbins AFB, Georgia to a brand-new radar station on the east side of the field:
+        <strong>Cross City Air Force Station</strong>, with an AN/FPS-20A search radar and two
+        AN/FPS-6A height-finders scanning the Gulf approaches.</p>
+      </div>
+    </article>
+
+    <article class="era era-radar" data-era="1960">
+      <div class="era-inner">
+        <div class="era-year">1960</div>
+        <h3>Plugged into SAGE</h3>
+        <p>Redesignated the <strong>691st Radar Squadron (SAGE)</strong> in October 1959, the station
+        begins feeding its radar picture to the <strong>Gunter SAGE Direction Center (DC-09)</strong>
+        in Alabama — part of the Semi-Automatic Ground Environment, essentially America's first
+        continental computer network. Upgrades follow: AN/FPS-66 in 1962, AN/FPS-66A in 1967.
+        The station also runs two remote "gap filler" radar sites at Perry, FL and Bridgeboro, GA.</p>
+      </div>
+    </article>
+
+    <article class="era era-radar" data-era="1970">
+      <div class="era-inner">
+        <div class="era-year">1970</div>
+        <h3>The Air Force stands down</h3>
+        <p>On <strong>September 30, 1970</strong> the 691st Radar Squadron inactivates and
+        Cross City Air Force Station closes. Airmen leave; the housing area, commander's house,
+        and main gate stay behind in the pines.</p>
+        <p class="era-note">Getting the history right: some sources list an "891st Radar Squadron,
+        1959–1969" at Cross City. Air Force records and the Air Defense Radar Veterans' Association
+        confirm it was the <strong>691st, 1958–1970</strong>.</p>
+      </div>
+    </article>
+
+    <article class="era" data-era="1972">
+      <div class="era-inner">
+        <div class="era-year">1972</div>
+        <h3>New tenants, same radar</h3>
+        <p>In 1972 the Florida Department of Corrections begins converting the former Air Force
+        Station into <strong>Cross City Correctional Institution</strong> — former station buildings
+        survive inside and around the prison grounds to this day.</p>
+        <p>But the radar site itself never went dark: it lives on as part of the
+        <strong>Joint Surveillance System (JSS)</strong>, the FAA/military shared long-range
+        radar network. The Cold War mission at Cross City literally never ended.</p>
+      </div>
+    </article>
+
+    <article class="era era-today" data-era="Today">
+      <div class="era-inner">
+        <div class="era-year">Today</div>
+        <h3>Fly-ins, fuel — and the radar still turns</h3>
+        <p>Cross City Airport today is a county-owned general aviation field with two 5,000-ft
+        runways (13/31 reconstructed in 2015), Dixie Aviation Services on the ramp, an annual
+        fly-in that draws thousands, and a working radar on the horizon quietly continuing a
+        mission that started in 1958.</p>
+        <p>Land here and you're rolling on WWII concrete, under Cold War surveillance,
+        at a field that opened when the DC-3 was the future. Not bad for a small town in
+        the pines.</p>
+        <a class="btn btn-primary" href="#events">See the annual Fly-In ▸</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="tour-sources container">
+    <details>
+      <summary>Sources for this history</summary>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Cross_City_Air_Force_Station" target="_blank" rel="noopener">Wikipedia — Cross City Air Force Station</a></li>
+        <li><a href="https://fortwiki.com/Cross_City_Air_Force_Station" target="_blank" rel="noopener">FortWiki — Cross City AFS</a></li>
+        <li><a href="https://www.radomes.org/museum/parsehtml.php?key=CrossCityAFSFL.html&amp;type=recent_html" target="_blank" rel="noopener">Radomes.org (Air Defense Radar Veterans' Association) — Cross City AFS</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Cross_City_Airport" target="_blank" rel="noopener">Wikipedia — Cross City Airport</a></li>
+        <li><a href="https://www.airfields-freeman.com/FL/Airfields_FL_TampaN.htm" target="_blank" rel="noopener">Abandoned &amp; Little-Known Airfields — Bushnell AAF (Cross City P-47 operations)</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Cross_City_Correctional_Institution" target="_blank" rel="noopener">Wikipedia — Cross City Correctional Institution</a></li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============ -->
+<section class="section section-alt" id="events">
+  <div class="container">
+    <h2><span class="section-num">05</span> Annual Fly-In, Cruise-In &amp; Business Expo</h2>
+    <p class="section-lede">Every spring the Dixie County Chamber of Commerce turns the ramp into the
+    county's biggest party.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num">3,500+</div><div class="stat-label">visitors</div></div>
+      <div class="stat"><div class="stat-num">65</div><div class="stat-label">aircraft on the ramp</div></div>
+      <div class="stat"><div class="stat-num">100</div><div class="stat-label">local businesses</div></div>
+    </div>
+    <p>Past events have featured helicopter rides, Coast Guard flyovers, Sikorsky aircraft,
+    classic cars, and food from across the county. Watch this page and the
+    <a href="https://www.dixiecounty.us/" target="_blank" rel="noopener">Dixie County</a> and Chamber
+    announcements for the next date — or call the FBO and we'll tell you.</p>
+  </div>
+</section>
+
+<!-- ============ VISIT / HIDDEN COAST ============ -->
+<section class="section" id="visit">
+  <div class="container">
+    <h2><span class="section-num">06</span> Fly In for the Hidden Coast</h2>
+    <p class="section-lede">KCTY is the front door to Florida's Nature Coast — the unspoiled stretch
+    the guidebooks miss. Land, grab the courtesy car, and pick a direction.</p>
+    <div class="visit-grid">
+      <div class="visit-card"><h3>Steinhatchee</h3><p>Waterfront seafood and world-class scalloping in season. One of the best $100-hamburger-and-then-some runs in Florida.</p></div>
+      <div class="visit-card"><h3>Suwannee &amp; Horseshoe Beach</h3><p>Old-Florida fishing villages where the Suwannee River meets the Gulf. Quiet water, big sunsets.</p></div>
+      <div class="visit-card"><h3>Putnam Lodge</h3><p>The restored 1928 lumber-boom hotel minutes from the field — dinner in a piece of the same history told in our scroll tour.</p></div>
+      <div class="visit-card"><h3>Nature Coast State Trail</h3><p>32 miles of paved rail-trail through the pines, crossing the Suwannee on a historic rail trestle.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECONOMIC IMPACT ============ -->
+<section class="section section-alt" id="impact">
+  <div class="container">
+    <h2><span class="section-num">07</span> The Airport &amp; the County</h2>
+    <p class="section-lede">Cross City Airport is working infrastructure — flight training, corporate aviation,
+    agricultural spraying for the tree farms, medical air transport, and search-and-rescue staging
+    for north-central Florida.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num">$7.7M</div><div class="stat-label">annual economic output</div></div>
+      <div class="stat"><div class="stat-num">50</div><div class="stat-label">jobs supported</div></div>
+      <div class="stat"><div class="stat-num">$2.4M</div><div class="stat-label">payroll</div></div>
+      <div class="stat"><div class="stat-num">18,954</div><div class="stat-label">operations (2023)</div></div>
+    </div>
+    <p class="fineprint">Source: FDOT Florida Aviation System Plan 2043 airport profile (2023 data).
+    Forecast for 2043: 16 based aircraft and ~24,900 annual operations.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="container">
+    <h2><span class="section-num">08</span> Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Airport Manager</h3>
+        <p class="contact-name">Clint Beauchamp</p>
+        <p><a href="tel:+13524986656">(352) 498-6656</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>Secondary Contact</h3>
+        <p class="contact-name">Mike Cassidy</p>
+        <p><a href="tel:+13524981426">(352) 498-1426</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>Address</h3>
+        <p>508 NE 241st St<br>Cross City, FL 32628</p>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=29.6355278,-83.1047500" target="_blank" rel="noopener">Open in maps</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>Hangars &amp; Leasing</h3>
+        <p>Hangar space and lease availability — call the airport manager for the current waitlist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>Cross City Airport (KCTY / CTY)</strong> · Dixie County, Florida · CTAF 122.8 · AWOS 120.775 / (352) 498-0221</p>
+    <p class="fineprint">This site is for general information. Pilots must use current FAA publications,
+    NOTAMs, and the AWOS broadcast for flight planning and operations. History imagery credits:
+    U.S. Air Force, State Archives of Florida, and the Air Defense Radar Veterans' Association (radomes.org).</p>
+  </div>
+</footer>
+
+<script src="js/weather.js"></script>
+<script src="js/tour.js"></script>
+</body>
+</html>
