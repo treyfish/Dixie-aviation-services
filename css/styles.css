@@ -321,6 +321,28 @@ a:hover { color: var(--sky-400); }
 }
 .era .btn { margin-top: 0.5rem; }
 
+.era-figure { margin: 0.9rem 0 0.4rem; }
+.era-figure img {
+  width: 100%; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  background: rgba(255,255,255,0.04);
+}
+.era-figure figcaption {
+  font-size: 0.74rem; color: rgba(255,255,255,0.55);
+  margin-top: 0.45rem; line-height: 1.45;
+}
+@media (min-width: 760px) {
+  .era:nth-child(odd) .era-figure figcaption { text-align: right; }
+}
+
+/* hero backdrop photo */
+.hero-photo {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0.28; mix-blend-mode: luminosity;
+}
+
 .tour-sources { margin-top: 1rem; }
 .tour-sources details {
   font-size: 0.85rem; color: rgba(255,255,255,0.65);
