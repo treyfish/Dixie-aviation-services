@@ -24,6 +24,18 @@
     });
   }
 
+  /* --- hide figures whose (externally hosted) image fails to load --- */
+  document.querySelectorAll(".era-figure img, .photo-figure img").forEach(function (img) {
+    img.addEventListener("error", function () {
+      var fig = img.closest("figure");
+      if (fig) fig.hidden = true;
+    });
+    if (img.complete && img.naturalWidth === 0) {
+      var fig = img.closest("figure");
+      if (fig) fig.hidden = true;
+    }
+  });
+
   /* --- era reveal --- */
   var eras = document.querySelectorAll(".era");
   if (!eras.length) return;

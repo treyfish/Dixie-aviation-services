@@ -323,7 +323,7 @@ a:hover { color: var(--sky-400); }
 
 .era-figure { margin: 0.9rem 0 0.4rem; }
 .era-figure img {
-  width: 100%; border-radius: 8px;
+  width: 100%; height: auto; border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.15);
   box-shadow: 0 8px 24px rgba(0,0,0,0.35);
   background: rgba(255,255,255,0.04);
@@ -387,6 +387,17 @@ a:hover { color: var(--sky-400); }
 .contact-card h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 0.5rem; }
 .contact-name { font-weight: 700; font-size: 1.1rem; }
 .contact-card a { font-weight: 600; }
+
+/* ---------- Photo figures in light sections ---------- */
+.photo-figure { margin: 2rem auto 0; max-width: 720px; }
+.photo-figure img {
+  width: 100%; height: auto; border-radius: var(--radius);
+  border: 1px solid rgba(28,35,51,0.12);
+  box-shadow: 0 8px 24px rgba(28,35,51,0.12);
+}
+.photo-figure figcaption {
+  font-size: 0.78rem; color: var(--ink-soft); margin-top: 0.5rem; line-height: 1.5;
+}
 
 /* ---------- Footer ---------- */
 .site-footer {

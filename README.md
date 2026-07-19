@@ -38,7 +38,34 @@ Per the research dossier this site was built from:
 
 - Confirm all operational data (hours, contacts, fuel offerings, phone numbers) with the airport manager (Clint Beauchamp, (352) 498-6656).
 - Confirm the county's preferred host and who approves content.
-- Add real photography: golden-hour ramp/runway shots for the hero and "Today" era, and archival imagery for the tour (see the photo source book — Wikimedia Commons/USAF photos are public domain; radomes.org photos need permission from the Air Defense Radar Veterans' Association).
+- Add your own photography: golden-hour ramp/runway shots for the hero and "Today" era would beat the stock imagery currently in place.
+
+## Imagery
+
+History-tour and contact-section images are hotlinked from Wikimedia Commons (hotlinking is
+supported by Wikimedia's CDN). Every file was license-verified on its Commons file page:
+
+| Image | Used in | License / credit |
+|---|---|---|
+| Bell P-39 firing all weapons at night | 1942 era | PD (U.S. Air Force) |
+| Republic P-47N in flight | 1943 era | PD (U.S. Air Force) |
+| Stinson L-5 Sentinel | 1944 era | San Diego Air & Space Museum Archives — no known restrictions |
+| Cross City AAF 1944 aerial | 1945 era | PD (USGS) |
+| Cross City AFS station photo | 1958 era | PD (U.S. Air Force) |
+| SAGE control room | 1960 era | PD (U.S. Air Force) |
+| Cross City Airport 1999 orthophoto | 1972 era | PD (USGS) |
+| Airport panorama (2010) | Today era | **CC BY-SA 3.0 — WillMcC** (credit required, kept in caption) |
+| Entrance road (2024) | Contact | **CC BY 4.0 — DanTD** (credit required, kept in caption) |
+
+If you later self-host these images, keep the caption credit lines for the two CC-licensed
+photos — the rest are public domain and the credits are courtesy only.
+
+Not yet included: the 1944 Florida air-defense chart on Florida Memory
+(floridamemory.com/items/show/147045) — the site blocks automated fetching, so it couldn't be
+verified from this environment. Download it manually in a browser (item is marked Public Domain
+per the research dossier) and add it to the 1942 era if wanted. Radomes.org photos (main gate,
+housing, commander's house) need permission from the Air Defense Radar Veterans' Association
+before use.
 
 ## Content notes
 
