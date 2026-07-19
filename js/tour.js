@@ -1,62 +1,73 @@
 /* =========================================================
-   Scroll-driven reveal for the "KCTY Through Time" tour,
-   plus the mobile nav toggle. IntersectionObserver only —
-   no libraries, and everything stays visible if JS is off
-   or reduced motion is requested.
+   KCTY site interactions — deliberately minimal.
+   - header hairline after scroll
+   - mobile nav toggle
+   - subtle reveal on scroll (content stays visible without JS;
+     the .js class gates all animation styles)
+   - figures hide themselves if their externally hosted image
+     fails to load
+   Honors prefers-reduced-motion.
    ========================================================= */
 
 (function () {
   "use strict";
 
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* --- header state --- */
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var onScroll = function () {
+      header.classList.toggle("scrolled", window.scrollY > 8);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
   /* --- mobile nav --- */
   var toggle = document.querySelector(".nav-toggle");
-  var links = document.querySelector(".nav-links");
-  if (toggle && links) {
+  var navRight = document.querySelector(".nav-right");
+  if (toggle && navRight) {
     toggle.addEventListener("click", function () {
-      var open = links.classList.toggle("open");
+      var open = navRight.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
-    links.addEventListener("click", function (e) {
+    navRight.addEventListener("click", function (e) {
       if (e.target.tagName === "A") {
-        links.classList.remove("open");
+        navRight.classList.remove("open");
         toggle.setAttribute("aria-expanded", "false");
       }
     });
   }
 
-  /* --- hide figures whose (externally hosted) image fails to load --- */
-  document.querySelectorAll(".era-figure img, .photo-figure img").forEach(function (img) {
-    img.addEventListener("error", function () {
+  /* --- hide figures whose image fails to load --- */
+  document.querySelectorAll("figure img").forEach(function (img) {
+    var hide = function () {
       var fig = img.closest("figure");
       if (fig) fig.hidden = true;
-    });
-    if (img.complete && img.naturalWidth === 0) {
-      var fig = img.closest("figure");
-      if (fig) fig.hidden = true;
-    }
+    };
+    img.addEventListener("error", hide);
+    if (img.complete && img.naturalWidth === 0) hide();
   });
 
-  /* --- era reveal --- */
-  var eras = document.querySelectorAll(".era");
-  if (!eras.length) return;
+  /* --- reveal on scroll --- */
+  if (reduceMotion || !("IntersectionObserver" in window)) return;
 
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!("IntersectionObserver" in window) || reduceMotion) {
-    eras.forEach(function (el) { el.classList.add("in-view"); });
-    return;
-  }
+  document.documentElement.classList.add("js");
 
   var observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
+          entry.target.classList.add("in");
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.25, rootMargin: "0px 0px -10% 0px" }
+    { threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
   );
 
-  eras.forEach(function (el) { observer.observe(el); });
+  document.querySelectorAll(".reveal").forEach(function (el) {
+    observer.observe(el);
+  });
 })();

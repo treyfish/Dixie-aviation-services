@@ -12,14 +12,20 @@ Built to replace the county's thin airport page with:
 
 ## Stack
 
-Plain HTML + CSS + vanilla JS. No frameworks, no build step, no CDNs, no API keys. Host it anywhere — GitHub Pages, county web server, any static host.
+Plain HTML + CSS + vanilla JS. No frameworks, no build step, no API keys. Host it anywhere — GitHub Pages, county web server, any static host. Web fonts (Instrument Serif, Inter, IBM Plex Mono) load from Google Fonts with system-font fallbacks.
 
 ```
 index.html        # the whole site (single page, anchored sections)
-css/styles.css    # styles; mobile-first, honors prefers-reduced-motion
+css/styles.css    # Heritage Editorial design system (warm paper/ink/olive/orange palette)
 js/weather.js     # live weather widget (NWS primary, AWC fallback)
-js/tour.js        # scroll-reveal for the history tour + mobile nav
+js/tour.js        # header state, mobile nav, subtle reveals, image-failure fallback
 ```
+
+Design follows the "Heritage Editorial + Archive Field Manual + Executive FBO" direction:
+editorial serif display type, monospace operational/archival annotations, hairline-and-column
+layouts instead of cards, a dark operational strip for live field conditions, and the history
+told as four editorial chapters with museum-style captions. All content remains visible with
+JavaScript disabled, and animations honor `prefers-reduced-motion`.
 
 ## Local preview
 
